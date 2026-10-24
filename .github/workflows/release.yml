@@ -1,0 +1,55 @@
+name: Build & Release
+
+# 推 v* 标签 → 自动构建 zip 并发布 Release（同 tag 重复推送会覆盖附件）
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: '要发布/覆盖的 tag（如 v1.0.2，留空则读 info.json 版本）'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Regenerate dictionary from translations
+        run: python tools/gen_dict.py
+
+      - name: Build mod zip
+        run: python tools/build_zip.py
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INPUT_TAG: ${{ github.event.inputs.tag }}
+        run: |
+          set -euo pipefail
+          VER=$(python -c "import json;print(json.load(open('mod/mod_info/ZHCNEditorLoc/info.json'))['version_string'])")
+          TAG="${INPUT_TAG:-}"
+          if [ -z "$TAG" ]; then TAG="v${VER}"; fi
+          ZIP=$(ls dist/*.zip | head -n1)
+          echo "version=${VER} tag=${TAG} zip=${ZIP}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "release exists → 覆盖附件"
+            gh release upload "$TAG" "$ZIP" --clobber
+          else
+            gh release create "$TAG" "$ZIP" \
+              --target main \
+              --title "世界编辑器汉化包 v${VER}" \
+              --notes-file .github/release-notes.md
+          fi
+          gh release view "$TAG" --json tagName,name,assets --jq '{tag:.tagName,name:.name,assets:[.assets[].name]}'

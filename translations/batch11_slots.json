@@ -1,0 +1,18 @@
+{
+  "Amplitude": "振幅",
+  "Frequency": "频率",
+  "Frames": "帧",
+  "Frames / Sec": "帧/秒",
+  "Normal Map": "法线贴图",
+  "Base Color": "基础颜色",
+  "Color Map": "颜色贴图",
+  "Roughness Map": "粗糙度贴图",
+  "Metallic Map": "金属度贴图",
+  "Emissive Map": "自发光贴图",
+  "Ambient Occlusion Map": "环境光遮蔽贴图",
+  "Height Map": "高度贴图",
+  "Detail Map": "细节贴图",
+  "Layer": "图层",
+  "Layers:": "图层：",
+  "Opacity Map": "不透明度贴图"
+}

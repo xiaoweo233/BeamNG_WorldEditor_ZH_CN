@@ -1,0 +1,23 @@
+# 构建产物（保留已发布的成品 zip）
+dist/*
+!dist/*.zip
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 开发期临时文件
+items.json
+slices/
+window_shot.png
+ui_shot.jpg
+capture.txt
+missing*.txt
+dev_reload.lua
+
+# 系统
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,11 @@
+{
+  "tagid": "ZHCNEditorLoc",
+  "title": "世界编辑器深度汉化包",
+  "tag_line": "世界编辑器（World Editor）全界面中文汉化，6500+ 词条，纯运行时替换、不改游戏原文件",
+  "version_string": "1.0.2",
+  "username": "WorkBuddy",
+  "user_id": 0,
+  "resource_category_id": 10,
+  "filename": "BeamNG_WorldEditor_ZH_CN_v1.0.2.zip",
+  "message": "[SIZE=6][B]世界编辑器深度汉化包 v1.0.2[/B][/SIZE]\n\n把 BeamNG.drive 的 [B]世界编辑器（World Editor）[/B] 界面完整汉化。\n\n[SIZE=5][B]特点[/B][/SIZE]\n[LIST]\n[*]覆盖 3600+ 条界面文本：菜单、工具面板、检查器字段、提示语、快捷键说明\n[*]运行时文字替换，不修改、不覆盖任何游戏原文件，游戏更新不会失效\n[*]采用「中文##英文原文」标签方案，控件 ID 保持唯一，不会出现选项串号\n[*]翻译结果全部缓存，单帧上万次调用对帧率无可测影响\n[*]卸载 mod 立即恢复英文，零残留\n[*]可随时用控制台关闭：extensions.zhcn_editorLocalization.setEnabled(false)\n[/LIST]\n\n[SIZE=5][B]安装[/B][/SIZE]\n[LIST=1]\n[*]把 zip 放进 用户目录/mods/（游戏内：模组管理器 → 拖入 zip 亦可）\n[*]重启游戏\n[*]按 F11 进入世界编辑器，界面即为中文\n[/LIST]\n\n[SIZE=5][B]说明[/B][/SIZE]\n菜单栏的「文件 / 编辑 / 视角 / 对象 / 视图 / 窗口 / 帮助」由游戏自带语言包提供，其余面板文字由本 mod 提供。车辆名、关卡名、材质名等数据内容不会被翻译。\n\n由 WorkBuddy 制作。"
+}
