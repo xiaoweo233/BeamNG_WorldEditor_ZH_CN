@@ -44,7 +44,8 @@ jobs:
           ZIP=$(ls dist/*.zip | head -n1)
           echo "version=${VER} tag=${TAG} zip=${ZIP}"
           if gh release view "$TAG" >/dev/null 2>&1; then
-            echo "release exists → 覆盖附件"
+            echo "release exists → 覆盖附件并同步说明"
+            gh release edit "$TAG" --notes-file .github/release-notes.md
             gh release upload "$TAG" "$ZIP" --clobber
           else
             gh release create "$TAG" "$ZIP" \

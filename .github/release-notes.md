@@ -56,7 +56,7 @@ python tools/gen_dict.py    # 合并 translations/ → mod/lua/ge/extensions/zhc
 python tools/build_zip.py   # 打包 → dist/BeamNG_WorldEditor_ZH_CN_v1.0.2.zip
 ```
 
-维护/二次开发请看仓库里的 [HANDOVER.md](https://github.com/xiaoweo233/BeamNG-Editor-ZH-CN/blob/main/HANDOVER.md)。
+维护/二次开发请看仓库里的 [HANDOVER.md](https://github.com/xiaoweo233/BeamNG_WorldEditor_ZH_CN/blob/main/HANDOVER.md)。
 
 ---
 
